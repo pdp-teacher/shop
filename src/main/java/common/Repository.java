@@ -1,8 +1,14 @@
 package common;
 
-public interface Repository <ENTITY,ID extends BaseEntity<ID>> {
+import java.util.List;
+
+public interface Repository <ENTITY,ID> {
 
 
+
+    ENTITY save(ENTITY entity);
+    void delete(ID id);
+    List<ENTITY> getAll();
 
 
 }

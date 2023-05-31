@@ -22,8 +22,9 @@ public class User extends BaseEntity<UUID> implements Serializable {
     private LocalDateTime created;
     private LocalDateTime updated;
 
+
     @Override
-    protected UUID getAllID() {
+    protected  UUID getAllID() {
         return userId;
     }
 }
