@@ -1,0 +1,7 @@
+Condition nima ?
+Aynan bitta resursdan bir paytni uzida bir nechta threadlar foydalanishi va bir nechta
+ threadlar uzgartirishi bu race condition muammosini keltirib chiqarishi mumkin.
+ Race condition notugri rusultat chiqib qolishi kuzatiladi. masalan: bir vaqtda banklardagi hisob raqamlarda ikki
+ va undan ortiq threadlar amaliyot bajarish natijasida hisobdagi pulni yuqolib chiqish jarayonlari kuzatiladi.
+Condition muammosini 2 xil usulda hal qilish mumkin. 1 Synchronized methodi va 2 lock qilish orqali.
+Synchronized methodiga synchroniz keywordidan yoki bloklaridan foydalanib method yaratiladi.
