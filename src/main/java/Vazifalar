@@ -1,3 +1,3 @@
-1. Race contition va uning yechimi haqida yozing
+1. Race contition va uning yechimi haqida yozing.
 2. user package da shunday user service yaratingki. uni ichida 1 ta method bo'lsin. u method eng ko'p pul sarflagan userlarni opib bersin.
 3. BaseEntity ni yarating. Repositorylarni yarating. repositoryda hamma userlarni serialization orqali faylga saqlang. va fayldan o'qib oling.
