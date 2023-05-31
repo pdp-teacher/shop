@@ -1,0 +1,40 @@
+Race condition Java dasturlash tilida ham uyg'otilishi mumkin. Ushbu muammo, shuningdek boshqa dasturlash tillarida, parallel o'tadigan threadlar yoki protsesslar orqali amalga oshirilgan bo'lgan kod qatorlari yoki operatsiyalar bilan bog'liq. Java platformasida, ko'plab muammo turlari uchun bir nechta yechimlar mavjud.
+
+Java'da Race condition'dan saqlanish uchun quyidagi usullar ishlatilishi mumkin:
+
+Synchronization (Tizimlash): Java synchronized kalit so'zi yordamida belgilangan obyektlar yoki metodlar orqali bir vaqtning o'zida faqatgina bitta thread ishlaydi. Bu, xotiradagi ma'lumotlarga xohlagancha kirishning oldini olish uchun foydalanish mumkin.
+Misol uchun:
+
+arduino
+Copy code
+public synchronized void increment() {
+    // Obyektga murojaat qiluvchi kodlar
+}
+Lock (Qulf): Java.util.concurrent paketida mavjud bo'lgan Lock obyekti yordamida ham Race condition'dan saqlanish mumkin. Lock obyekti orqali "lock()" va "unlock()" metodlari bilan berilgan qismlarni bloklash va bo'qish mumkin.
+Misol uchun:
+
+csharp
+Copy code
+Lock lock = new ReentrantLock();
+
+public void increment() {
+    lock.lock();
+    try {
+        // Obyektga murojaat qiluvchi kodlar
+    } finally {
+        lock.unlock();
+    }
+}
+Volatile o'zgaruvchi: Volatile kalit so'zi yordamida belgilangan o'zgaruvchilar uchun o'zgarishlarni to'g'ri joylashishini ta'minlash mumkin. Bu, o'zgaruvchini har bir thread uchun yangilab, ko'rishini ta'minlaydi.
+Misol uchun:
+
+arduino
+Copy code
+private volatile int counter = 0;
+Bu usullar Java'da Race condition'dan saqlanishni ta'minlash uchun foydalaniladigan ko'plab variantlardan faqat ba'zilaridir. Muammo turi va kodning xususiyatlariga qarab, boshqa yechimlarga ham e'tibor berilishi kerak.
+
+
+
+
+
+

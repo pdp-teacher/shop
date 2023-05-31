@@ -4,4 +4,42 @@
 
 
 
-race condition
+
+
+ 1- SAVOLGA JAVOB;
+
+ Race condition bu threadlar bir birini qulflab qoygan payt yordamga keladi misol lock lar
+
+ Thread lar hammasi birga ishlaydi misol uchun counter++ qilib qoysak threadlar bir birini kormay
+ ishagani uchun bizda hatolik kuzatiladi
+
+ Lock lock = new ReentrantLock();
+
+ public void increment() {
+     lock.lock();
+     try {
+     } finally {
+         lock.unlock();
+     }
+ }
+ bular ham race condition bo`ladi
+
+ bundan ham oson yoli metodni synchronized qilish kerak.Bizda yana race condition lar dan Atomic lar
+ ham ishlatishimiz mumkin AtomiclarInteger AtomicDouble  Atomic lar ni ozini metodlari bor
+ biz uni qolab tezroq natijaga erishishimiz mumkin.
+
+         AtomicInteger atomicInteger =new AtomicInteger(0);
+
+
+    public synchronized int increment() {
+       /*  try {
+             lock.lock();
+             couter++;
+         } finally {
+             lock.unlock();
+         }*/
+         couter++;
+         return couter;
+     }
+     bu metod thread lar ni bir birini qulflab qoyishga yol qoymaydi.
+
