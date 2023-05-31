@@ -1,0 +1,4 @@
+1. Race contition va uning yechimi haqida yozing.
+birnech theardlarni birvaqtida ishlashi va 1 vazifani birnecha theardlar qilishi masalan
+ 1-100000 oshiradigan mothod yardik va vazifani birnechta threadlarga bolib berdik
+ lekin bizda 100000 kam son chishi mumkun chunki mothor thread safe mas bunda 1 vazifani birnechda thread qayta qayta qilgan
