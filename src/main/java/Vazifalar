@@ -1,3 +1,37 @@
-1. Race contition va uning yechimi haqida yozing.  
-2. user package da shunday user service yaratingki. uni ichida 1 ta method bo'lsin. u method eng ko'p pul sarflagan userlarni opib bersin.
-3. BaseEntity ni yarating. Repositorylarni yarating. repositoryda hamma userlarni serialization orqali faylga saqlang. va fayldan o'qib oling.
+1. Race condition va uning yechimi haqida yozing.
+2. user package da shunday user service yaratingki. uning ichida 1 ta method bo'lsin. u method eng ko'p pul sarflagan userlarni olib bersin.
+3. BaseEntity ni yaratin+g. Repositorylarni yarating. repositoryda hamma userlarni serialization orqali faylga saqlang. va fayldan o'qib oling.
+
+1. Savolga javob:
+
+    Threadlar, ya`ni o`zbek tiliga "oqim" deb tarjima qilinadi, bir-birini qulflab qo`ygan payt race conditionlar yordamga keladi.
+    Masalan, locklar. Locklar increment va decrement bo`lishi mumkin. Deadlock ko`p ishlatilmaydi.
+    Deadlock bu threadlar bir-birini qulflab qo`yishidir.
+
+   example:
+    Lock lock = new ReentrantLock();
+
+    public void increment() {
+        lock.lock();
+        try {
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    bundan ham oson yoli metodni synchronized qilish kerak.Bizda yana race condition lar dan Atomic lar
+    ham ishlatishimiz mumkin AtomiclarInteger AtomicDouble  Atomic lar ni ozini metodlari bor
+    biz uni qolab tezroq natijaga erishishimiz mumkin.
+
+       public synchronized int increment() {
+          /*  try {
+                lock.lock();
+                couter++;
+            } finally {
+                lock.unlock();
+            }*/
+            couter++;
+            return couter;
+        }
+        Ushbu synchronized method threadlar ni bir-birini qulflab qo`yishiga yo`l qoymaydi.
+        Ushbu holatlarda bizga juda qo`l keladi. Threadlar bir-birini qulflab qo`ymasligi va ishlashda davom etishi kerak.
